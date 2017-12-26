@@ -45,4 +45,34 @@
   font-weight: normal;
 }
 
+.smart {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 576px) {
+  .smart {
+    width: -webkit-calc(100% - 30px);
+    width: calc(100% - 30px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .smart {
+    width: -webkit-calc(50% - 30px);
+    width: calc(50% - 30px);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .smart {
+    width: -webkit-calc(33.33333% - 30px);
+    width: calc(33.33333% - 30px);
+  }
+}
+
 /*# sourceMappingURL=../css/main.css.map */

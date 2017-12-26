@@ -86,9 +86,19 @@ gulp.task('watch', ['connectDist', 'connectDev',  'browser-sync', 'css-libs', 's
     gulp.watch('app/layouts/*.html', browserSync.reload);
     gulp.watch('app/src/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
+    gulp.watch('app/less/*.less', browserSync.reload);
 });
 
 gulp.task('glyphicon-bootstrap', function() {
     return gulp.src('app/libs/bootstrap/dist/fonts/**/*')
         .pipe(gulp.dest('app/fonts'));
+});
+const smartgrid = require('smart-grid');
+gulp.task('grid', function () {
+    smartgrid('app/less', {
+        container: {
+            maxWidth: '1170px'
+        },
+        outputStyle: 'scss', /* less || scss || sass || styl */
+    });
 });

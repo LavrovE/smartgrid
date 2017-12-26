@@ -19,6 +19,8 @@ body{
 
 }
 
+
+
 @import 'media';
 @import "fonts";
 @import "common_blocks/_inputs.scss";
@@ -28,3 +30,11 @@ body{
 @import "common_blocks/_modal.scss";
 @import "common_blocks/_grid.scss";
 @import "common_blocks/_icons.scss";
+@import "../less/smart-grid.scss";
+.smart {
+  @include col();
+  @include size-xs(12);
+  @include size-lg(6);
+  display: inline-block;
+  @include size-sm(4);
+}
