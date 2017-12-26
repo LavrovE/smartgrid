@@ -1,0 +1,154 @@
+@import "head.html"
+
+
+@import "header.html"
+<div class="container allwrap">
+    @import "sidebar.html"
+    <div class="main_content">
+        <div class="content__wrapper">
+            <div class="head table">
+                <div class="head__left table__left">
+                    <div class="float-left">
+                        <h1>Вчительська</h1>
+                    </div>
+                </div>
+                <div class="head__right table__right">
+                    <div class="float-right edit">
+                        <a class="inline" href="#"><i class="inline icon-left"><img src="../img/pancil.png"></i>редагувати текст сторiнки</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <hr class="underline">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3>HOME</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>Menu 1</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3>Menu 3</h3>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+            </div>
+
+            <!--random inputs-->
+            <div class="myblock">
+                <div id="main">
+                    <form action="#" method="post" class="customForm" id="myForm">
+                        <h2>Input:</h2>
+                        <div class="input">
+                            <input class="custom-input" type="text" id="text" name="email" placeholder=" test"/>
+                        </div>
+
+                        <h2>Текстовое поле:</h2>
+                        <div>
+                            <textarea class="custom-textarea" placeholder=" Tекст сообщения"></textarea>
+                        </div>
+
+                        <h2>Select:</h2>
+                        <div class="select">
+                            <a href="#" class="slct">Выберите Ваше лучшее качество:</a>
+                            <ul class="drop custom-select">
+                                <li class="custom-select__li">Красивый(ая)</li>
+                                <li class="custom-select__li">Умный(ая)</li>
+                                <li class="custom-select__li">Коммуникабульный(ая)</li>
+                                <li class="custom-select__li">Скромный(ая)</li>
+                            </ul>
+                            <input type="hidden" id="select"/>
+                        </div>
+
+                        <h2>Radio Button:</h2>
+                        Выберите Ваше лучшее качество:
+                        <div class="radioblock">
+                            <div class="radio">Красивый(ая)</div>
+                            <div class="radio">Умный(ая)</div>
+                            <div class="radio">Коммуникабульный(ая)</div>
+                            <div class="radio">Скромный(ая)</div>
+                            <div class="clear"></div>
+
+                            <input type="hidden" id="radion"/>
+                        </div>
+
+                        <h2>Checkbox:</h2>
+                        Выберите, с какими языками программирования Вам доводилось сталкиваться в веб-дизайне:
+                        <div class="checkboxes">
+                            <div class="check">
+                                jQuery
+                                <input type="checkbox" value="jQuery"/>
+                            </div>
+                            <div class="check">
+                                HTML
+                                <input type="checkbox" value="HTML"/>
+                            </div>
+                            <div class="check">
+                                CSS
+                                <input type="checkbox" value="CSS"/>
+                            </div>
+                            <div class="check">
+                                PHP
+                                <input type="checkbox" value="PHP"/>
+                            </div>
+                            <div class="check">
+                                MySql
+                                <input type="checkbox" value="MySql"/>
+                            </div>
+                        </div>
+
+                        <div class="fileload upload">
+                            <h2>Загрузка файла:</h2>
+                            <div class="file-load-block upload__block">
+                                <input type="file" value="" id="file" class="upload__input-hidden"/>
+                                <div class="fileLoad upload__new">
+                                    <button class="upload__btn">Выберите файл</button>
+                                    <input type="text" value="Select file" class="upload__input custom-input"/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sendmail">
+                            <h2>Отправляем форму:</h2>
+                            <button class="custom-button" type="submit">Отправить</button>
+                        </div>
+
+                    </form>
+
+                    <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+                        <li class="active"><a href="#Commentary" data-toggle="tab">Commentary</a></li>
+                        <li><a href="#Videos" data-toggle="tab">Videos</a></li>
+                        <li><a href="#Events" data-toggle="tab">Events</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="Commentary"><p>Commentary WP_Query goes
+                            here.</p></div>
+                        <div role="tabpanel" class="tab-pane fade" id="Videos"><p>Videos WP_Query goes here.</p></div>
+                        <div role="tabpanel" class="tab-pane fade" id="Events"><p>Events WP_Query goes here.</p></div>
+                    </div>
+                    <button class="btn__small">1-й семестр</button>
+                    <button class="btn__normal">написати</button>
+                    <button class="btn__large">підключити школу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@import "footer.html"
+
+
+@import "foot.html"
+
+

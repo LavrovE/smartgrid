@@ -1,0 +1,19 @@
+.container{
+  display: block;
+  margin: 0 auto;
+  max-width: 1330px;
+}
+aside{
+  display: inline-block;
+  vertical-align: top;
+  width: $aside-width;
+}
+.main_content{
+  width: $container-width;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.allwrap{
+  //white-space: nowrap;
+}

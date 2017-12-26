@@ -1,0 +1,769 @@
+/* Sprite */
+.radio, .drop li, .slct, .check {
+  background: url(../img/sprite.png) 0 0 no-repeat;
+}
+
+/* Form */
+.customForm {
+
+}
+.custom-textarea {
+  min-width: 500px;
+}
+/*
+ * The MIT License
+ * Copyright (c) 2012 Matias Meno <m@tias.me>
+ */
+.dropzone, .dropzone * {
+  box-sizing: border-box;
+}
+
+.dropzone {
+  position: relative;
+}
+
+.dropzone .dz-preview {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  margin: 0.5em;
+}
+
+.dropzone .dz-preview .dz-progress {
+  display: block;
+  height: 15px;
+  border: 1px solid #aaa;
+}
+
+.dropzone .dz-preview .dz-progress .dz-upload {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: green;
+}
+
+.dropzone .dz-preview .dz-error-message {
+  color: red;
+  display: none;
+}
+
+.dropzone .dz-preview.dz-error .dz-error-message, .dropzone .dz-preview.dz-error .dz-error-mark {
+  display: block;
+}
+
+.dropzone .dz-preview.dz-success .dz-success-mark {
+  display: block;
+}
+
+.dropzone .dz-preview .dz-error-mark, .dropzone .dz-preview .dz-success-mark {
+  position: absolute;
+  display: none;
+  left: 30px;
+  top: 30px;
+  width: 54px;
+  height: 58px;
+  left: 50%;
+  margin-left: -27px;
+}
+
+.customForm input, .customForm textarea {
+
+}
+
+/* = Input */
+input, textarea, .slct {
+  font-size: $main-size;
+  color: $text-color;
+  line-height: $main-Height;
+}
+
+*:focus {
+  outline: none;
+}
+
+.custom-input, .custom-textarea, .slct, .custom-select {
+
+  font-size: $main-size;
+  max-width: 500px;
+  line-height: $menu-height;
+  background-color: $input-background;
+  //font-family: $main-font;
+  @include border-radius($input-radius);
+  border: $input-border;
+  color: $text-color;
+  display: block;
+  width: 100%;
+  padding: $input-padding;
+  padding-right: 40px;
+  &:focus {
+    outline: none;
+    border: $input-border-focused;
+  }
+  &:active {
+    outline: none;
+    border: $input-border-focused;
+  }
+  &.input_disabled {
+
+    &::-webkit-input-placeholder {
+      color: $hr-color;
+    }
+
+    &::-moz-placeholder {
+      color: $hr-color;
+    }
+
+    /* Firefox 19+ */
+    &:-moz-placeholder {
+      color: $hr-color;
+    }
+
+    /* Firefox 18- */
+    &:-ms-input-placeholder {
+      color: $hr-color;
+    }
+
+  }
+  &.inline{
+    display: inline-block;
+  }
+}
+
+.input-padding-vert {
+  padding: 14px 0px;
+}
+
+.upload__btn {
+  min-width: $min-button-width;
+}
+
+.valid {
+
+}
+
+.custom-button {
+  font-size: $main-size;
+  line-height: $main-Height;
+  //background-color: $white-color;
+  //font-family: $main-font;
+  @include border-radius($input-radius);
+  cursor: pointer;
+  //color: $btn-color;
+  //border-color: $btn-color;
+  padding: $input-padding;
+  &:hover {
+    //background-color: $btn-color;
+    //color: $white-color;
+  }
+}
+
+button {
+  //min-width: $btn-width;
+  padding: $input-padding;
+  font-size: $main-size;
+  line-height: $main-Height;
+  cursor: pointer;
+  text-align: center;
+  @include border-radius($input-radius);
+  background-color: $btn-color;
+  color: $white-color;
+  //font-family: $main-font;
+  //border: 1px solid $main-color;
+  &:hover {
+    background-color: $btn-color-enabled;
+    color: $white-color;
+  }
+}
+
+.abutton {
+  z-index: 1;
+  color: $btn-color;
+  vertical-align: top;
+  background-color: $white-color;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  display: inline-block;
+  border: 1px solid $btn-color;
+  padding: $input-padding;
+  font-size: $main-size;
+  line-height: $main-Height;
+  cursor: pointer;
+  text-align: center;
+  @include border-radius($input-radius);
+  &:hover {
+    background-color: $btn-color;
+    color: $white-color;
+  }
+  &[disabled="true"] {
+    background-color: $btn-color-disabled;
+    pointer-events: none;
+  }
+}
+
+.upload__block {
+  cursor: pointer;
+  //display: block;
+  margin-left: 10px;
+
+  position: relative;
+}
+
+label {
+  font-size: $main-size;
+  line-height: $main-Height;
+  color: $main-color;
+  padding: $input-padding;
+}
+
+.input {
+  &__error {
+    &.decimal {
+      background-image: none;
+    }
+    border: 1px solid $error-color;
+    background-image: url("../img/inputs/error.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right 10px center;
+  }
+  &__success {
+    background-image: url("../img/inputs/success.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right 10px center;
+    &.decimal {
+      background-image: none;
+    }
+  }
+}
+
+label.input__error {
+  border: none;
+  display: block;
+  background-image: none;
+  color: #f24841;
+  padding: 0px;
+  //position: absolute;
+  //left: 0px;
+  line-height: 18px;
+  //top: 48px;
+  /* min-width: 300px; */
+}
+
+textarea {
+  display: block;
+  /* = Убираем скролл */
+  overflow: auto;
+  /* = Убираем увеличение */
+  resize: none;
+  /* = Добавим фон, рамку, отступ */
+}
+
+/* = Переключатели Radio Button */
+.radio {
+  display: block;
+  min-height: 28px;
+  background-position: 0px -240px;
+  color: $main-color;
+  //line-height: $breadcrumbs-height;
+  //font-family: $main-font;
+  line-height: 20px;
+  font-size: $main-size;
+  cursor: pointer;
+  //text-indent: 26px;
+}
+
+.radio.active {
+  background-position: 0px -353px;
+}
+
+.radio.error {
+  border-color: #ff0000;
+}
+
+/*	=	CheckBox */
+/* Стилизируем чекбокс, точнее скрываем его */
+.check input[type=checkbox] {
+  position: absolute;
+  left: -10000px;
+}
+
+.check {
+  background-position: 0 0px;
+  padding-left: 30px;
+  cursor: pointer;
+  position: relative;
+  vertical-align: top;
+  font-size: $main-size;
+  line-height: $main-Height;
+  color: $text-color;
+  display: inline-block;
+  min-height: 28px;
+  margin-bottom: 10px;
+}
+
+.check.active {
+  background-position: 0 -115px;
+}
+
+/*	=	Select */
+.slct {
+  &-mini {
+    background-position: 106px -448px;
+  }
+  display: block;
+  background-position: 220px -448px;
+  //margin-bottom: 20px;
+
+  /*
+      Супер финт обрезаем текст
+      чтобы не вылезал за рамку
+  */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  &-large {
+    background-position: 480px -446px;
+  }
+}
+
+.slct.active {
+
+}
+
+.custom-select {
+  padding: 0;
+  border-top: none;
+  display: none;
+  background: $input-background;
+  border-radius: $input-radius;
+  @include box-shadow($input-shadow);
+  &__li {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+    color: #444;
+    font-size: $main-size;
+    padding: $input-padding;
+    background-image: none;
+    -moz-background-image: none;
+    -o-background-image: none;
+    -webkit-background-image: none;
+    &:hover {
+      background-color: $input-background-hover;
+    }
+  }
+}
+
+.drop {
+  padding: 0;
+  border-top: none;
+  display: none;
+  background: $input-background;
+  border-radius: $input-radius;
+  @include box-shadow($input-shadow);
+  position: absolute;
+  z-index: 999;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.drop li {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  color: #444;
+  font-size: $main-size;
+  padding: $input-padding;
+  background-image: none;
+  -moz-background-image: none;
+  -o-background-image: none;
+  -webkit-background-image: none;
+  &.active {
+    background-color: $input-background-hover;
+  }
+  &:hover {
+    background-color: $input-background-hover;
+  }
+}
+
+.upload {
+  &__new {
+    //margin-bottom: 20px;
+  }
+}
+
+/* работаем с инпутом который конкретно file */
+.upload__input-hidden {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+.upload__input {
+  display: inline-block;
+  vertical-align: top;
+  background: none;
+  border: none;
+  width: auto;
+}
+
+.fileLoad.upload__new {
+  //margin-left: 10px;
+}
+
+/* Стилизируем инпут и кнопку которые под загрузчиком */
+.upload__btn {
+  z-index: 1;
+  color: $btn-color;
+  vertical-align: top;
+  background-color: $white-color;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  display: inline-block;
+  border: 1px solid $btn-color;
+  &.button-hover {
+    background-color: $btn-color;
+    color: $white-color;
+  }
+}
+
+.btn {
+  &__large {
+    border-color: $btn-color;
+    background-color: $btn-color;
+    color: $white-color;
+    text-transform: uppercase;
+    padding: $input-padding;
+    border: none;
+    cursor: pointer;
+    min-width: 180px;
+    @include border-radius($input-radius);
+    &:hover {
+      background-color: $btn-color-enabled;
+    }
+  }
+  &__normal {
+    border-color: $btn-color;
+    background-color: $btn-color;
+    color: $white-color;
+    text-transform: uppercase;
+    padding: $input-padding;
+    min-width: $btn-width;
+    cursor: pointer;
+    border: none;
+    @include border-radius($input-radius);
+    &:hover {
+      background-color: $btn-color-enabled;
+    }
+  }
+  &__small {
+    border-color: $btn-color;
+    background-color: $btn-color;
+    color: $white-color;
+    padding: $input-padding;
+    min-width: $btn-width;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    @include border-radius($input-radius);
+    &:hover {
+      background-color: $btn-color-enabled;
+    }
+    &-mini{
+      padding: 5px 0px;
+      max-width: 104px;
+    }
+  }
+}
+
+.button {
+  text-align: center;
+
+}
+
+.file-load-block .button-hover {
+  box-shadow: 0 0 2px #ccc;
+}
+
+.language {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 2px;
+  &__selected {
+    background: url(../img/sprite.png) 0 0 no-repeat;
+    background-color: transparent;
+    color: $white-color;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: $main-size;
+    //padding: $language-padding;
+    padding-left: 8px;
+    background-position: 40px -484px;
+    &:focus {
+      //background-color: $language-dark;
+      border: none;
+      background-color: transparent;
+    }
+    &:active {
+      //background-color: $language-dark;
+      border: none;
+      background-color: transparent;
+    }
+
+  }
+  &__wrapper {
+    position: relative;
+    min-width: $language-minwidth;
+
+  }
+  &__items {
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    left: 0px;
+    top: 24px;
+    right: 0px;
+    z-index: 99;
+    background: $info-background;
+    padding: 0px;
+    @include box-shadow($input-shadow);
+    @include border-radius($input-radius);
+    min-width: $language-minwidth;
+
+  }
+  &__item {
+    color: $white-color;
+    text-align: center;
+    width: 100%;
+    font-size: $main-size;
+    //line-height: $main-Height;
+    //padding: 7px 15.5px;
+    @include border-radius($input-radius);
+    &:first-child {
+      //padding-top: 12px;
+    }
+    &:last-child {
+      //padding-bottom: 12px;
+    }
+    &:hover {
+      background-color: $background-color;
+    }
+    a {
+      width: 100%;
+      display: block;
+      padding: 10px 0px;
+    }
+  }
+}
+
+.search {
+  @include border-radius($search-radius);
+  background-color: $info-background;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 25px;
+  &__input {
+    //line-height: $search-height;
+    border: none;
+    @include border-radius(0px);
+    background-color: $info-background;
+    color: $white-color;
+    width: $search-width;
+    padding: 7px 0px;
+    padding-left: 20px;
+  }
+  &__submit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: $input-padding-vert;
+    border: none;
+    @include border-radius(0px);
+    background-color: $info-background;
+    &:hover {
+      background-color: $info-background;
+    }
+  }
+  ::-webkit-input-placeholder {
+    color: $white-color;
+    //font-family: $main-font;
+    font-size: $main-size;
+  }
+
+  ::-moz-placeholder {
+    color: $white-color;
+    //font-family: $main-font;
+    font-size: $main-size;
+  }
+
+  /* Firefox 19+ */
+  :-moz-placeholder {
+    color: $white-color;
+    //font-family: $main-font;
+    font-size: $main-size;
+  }
+
+  /* Firefox 18- */
+  :-ms-input-placeholder {
+    color: $white-color;
+    //font-family: $main-font;
+    font-size: $main-size;
+  }
+}
+
+.top_messages {
+  &__span {
+    background: $error-color;
+    @include border-radius(200px);
+    font-style: normal;
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -11px;
+    font-size: $breadcrumbs-size;
+    color: $white-color;
+    height: auto;
+    width: 22px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+#help {
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+.mainButton {
+  //&-footer{
+  //  padding: 11px 30px;
+  //  background-color: $error-color;
+  //  margin-right: 20px;
+  //}
+  &__button {
+    padding: 5px 11px;
+    background-color: $error-color;
+    margin-right: 20px;
+    &:hover {
+      background-color: $error-color;
+      opacity: 0.9;
+    }
+  }
+  &__button-footer {
+    padding: 11px 50px;
+    background-color: $error-color;
+    margin-right: 0px;
+    display: block;
+    &:hover {
+      background-color: $error-color;
+      opacity: 0.9;
+    }
+  }
+
+}
+
+.radio {
+  margin: 10px 0px;
+  padding-left: 30px;
+  &-margin {
+    margin: 20px 0px;
+  }
+}
+
+.radioblock {
+  margin-bottom: 15px;
+  &-nomargin {
+    margin-bottom: 0px;
+  }
+}
+
+.submit {
+  background-color: $btn-color;
+  color: $white-color;
+  text-transform: uppercase;
+  min-width: 178px;
+  font-size: $main-size;
+  border: none;
+}
+
+.required {
+  color: $error-color;
+  margin-left: 2px;
+  font-size: 18px;
+  font-family: $bold-font;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+::-webkit-contacts-auto-fill-button {
+  opacity: 0;
+}
+
+.warning {
+  color: $error-color;
+  //font-family: $bold-font;
+}
+
+.middle-input {
+  max-width: 250px;
+}
+
+.small-input {
+  max-width: 125px;
+}
+
+.large-input {
+  max-width: 500px;
+  & .slct {
+    background-position: 480px -448px;
+  }
+}
+
+.select {
+  margin-bottom: 20px;
+}
+.textarea__ckeditor{
+  position: relative;
+  display: block;
+  cursor: pointer;
+  display: none;
+}
+
+
