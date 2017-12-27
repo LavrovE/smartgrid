@@ -1,5 +1,5 @@
 /node_modules/**
 /app/libs/**
 /.idea/
-/package-lock.json
-package-lock.json
+/package-lock
+package-lock
