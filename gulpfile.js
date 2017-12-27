@@ -10,6 +10,9 @@ var gulp            = require('gulp'),
     gulpImport      = require('gulp-html-import'),
     sourcemaps      = require('gulp-sourcemaps'),
     cors            = require('cors'),
+    gcmq            = require('gulp-group-css-media-queries'),
+    cleanCSS        = require('gulp-clean-css'),
+    smartgrid       = require('smart-grid'),
     connect         = require('gulp-connect');
 
 gulp.task('connect', function() {
@@ -43,6 +46,19 @@ gulp.task('sass', function(){
         .pipe(browserSync.reload({stream: true}))
 });
 
+
+
+gulp.task('maincssfinal', function () {
+    gulp.src('app/css/main.css')
+        .pipe(gcmq())
+        .pipe(autoprefixer())
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('app/css'));
+});
+
+
+
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -68,7 +84,8 @@ gulp.task('scripts', function() {
 gulp.task('import', function () {
     gulp.src('app/src/*.html')
         .pipe(gulpImport('app/layouts/'))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('app'))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('css-libs', ['sass'], function() {
@@ -78,24 +95,28 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('watch', ['connectDist', 'connectDev',  'browser-sync', 'css-libs', 'scripts', 'import'], function() {
+gulp.task('watch', ['connectDist', 'connectDev',  'browser-sync', 'css-libs', 'scripts', 'import', 'maincssfinal'], function() {
     gulp.watch('app/sass/**/*.scss', ['sass']);
     gulp.watch('app/src/*.html', ['import']);
     gulp.watch('app/layouts/*.html', ['import']);
+    gulp.watch('app/css/main.css', ['maincssfinal']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/layouts/*.html', browserSync.reload);
     gulp.watch('app/src/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
-    gulp.watch('app/less/*.less', browserSync.reload);
+    gulp.watch('app/sass/**/*.scss', browserSync.reload);
 });
 
 gulp.task('glyphicon-bootstrap', function() {
     return gulp.src('app/libs/bootstrap/dist/fonts/**/*')
         .pipe(gulp.dest('app/fonts'));
 });
-const smartgrid = require('smart-grid');
+
+
+
+// run one time before work
 gulp.task('grid', function () {
-    smartgrid('app/less', {
+    smartgrid('app/sass', {
         container: {
             maxWidth: '1170px'
         },
